@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside the div.
+  </div>
+  <script>
+    // Efficient and safe way to append content
+    const newParagraph1 = document.createElement('p');
+    newParagraph1.textContent = 'This is a new paragraph.';
+    document.getElementById("myDiv").appendChild(newParagraph1);
+
+    const newParagraph2 = document.createElement('p');
+    newParagraph2.textContent = 'This is another paragraph.';
+    document.getElementById("myDiv").appendChild(newParagraph2);
+    
+    //Alternative using insertAdjacentHTML (safer if content is sanitized)
+    document.getElementById("myDiv").insertAdjacentHTML('beforeend', '<p>This is a paragraph added with insertAdjacentHTML</p>');
+  </script>
+</body>
+</html>
